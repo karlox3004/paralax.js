@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    height: 3500px;
+    background-image: linear-gradient(200deg,#1c1131,#15668b,#8eaff7);
+  }
+#offsetData{
+  position:absolute;
+  top:10px;
+  left: 10px;
+  padding: 10px;
+  border: 1px solid crimson; 
+  font-size: 28px;
+}
+p{
+  position: fixed;
+  left: 20px;
+  top: 185px;
+  font-weight: bold;
+  font-size: 55px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#im1{
+  position: fixed;
+  top: 409px;
+  left: 177px;
+  width: 75.5%;
+
+}
+#im{
+  width: 95%;
+  margin-left: 6%;
+  left: 0px;
+  position: fixed;
+  top: 315px;
+
+}
+#in{
+  width: 95%;
+  margin-left: 6%;
+  left: 0px;
+  position: fixed;
+  top: 315px;
+
+}
+#im2{
+position: fixed;
+top: 310px;
+left: 0px;
+
+width: 100%;}
+#in2{
+position: fixed;
+top: 310px;
+left: 0px;
+
+width: 100%;}
+#im3{
+  position: fixed;
+  top: 440px;
+  left: 0px;
+  
+}#namiot{
+  position: fixed;
+  width: 17%;
+  top:640px;
+  z-index:2;
+}
+img{
+  width: 100%;
+}
+#sun{
+  width: 10%;
+  position: fixed;
+  left: -300px;
+}
+#krasnal{
+  position: fixed;
+  width: 100px;
+  top:840px;
+  left:2000px;
+  z-index: 1;
+}
+#zamek{
+  z-index: -1;
+  position: fixed;
+  top:10000px;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 420px;
+}
+#ch1{
+  z-index: 11;
+  position: fixed;
+  top:50px;
+  width: 350px;
+  left: -460px;
+}
+#ch3{
+  z-index: 10;
+  position: fixed;
+  top:100px;
+  width: 350px;
+  left: -650px;
+}
+#ch2{
+  z-index: 9;
+  position: fixed;
+  top:150px;
+  left: -1100px;
+  width: 350px;
+}
+#rycerz{
+  z-index: 9;
+  position: fixed;
+  top:550px;
+  left: -1500px;
+  width: 320px;
+}
+
+
+</style>
+<body>
+  
+ 
+  <img src="gory12.png" alt="" srcset="" id="im">
+  <img src="gory22.png" alt="" srcset="" id="in">
+  <img src="krzakityl.png" alt="" srcset="" id="im1">
+  <img src="krzakp2.png" alt="" srcset="" id="im2">
+  <img src="krzakp1.png" alt="" srcset="" id="in2">
+  <img src="przod.png" alt="" id="im3">
+  <img src="tent.png" alt="" srcset=""id="namiot" >
+  <img src="slonce.png" alt="" srcset="" id="sun">
+  <img src="png-clipart-krasnoludek-hunter-food-poster2.png" alt="" id="krasnal">
+  <img src="zamek.PNG" alt="" srcset="" id="zamek">
+  <img src="chmury2.png" alt="" srcset="" id="ch1">
+  <img src="chmury2.png" alt="" srcset="" id="ch2">
+  <img src="chmury2.png" alt="" srcset="" id="ch3">
+  <img src="rycerz.PNG" alt="" id="rycerz">
+  <script>
+    var gory1=document.getElementById("im")
+    var gory2=document.getElementById("in")
+    var Bkrzak=document.getElementById("im1")
+    var Bkrzak1=document.getElementById("im2")
+    var Bkrzak2=document.getElementById("in2")
+    var zamek=document.getElementById("zamek")
+    var namiot=document.getElementById("namiot")
+    var ch1=document.getElementById('ch1')
+    var ch2=document.getElementById('ch2')
+    var ch2=document.getElementById('ch2')
+    var  rycerz=document.getElementById('rycerz')
+    function scrollowanie(){
+      let yVal=window.scrollY;
+      var ob=document.getElementById("sun")
+      var ob2=document.getElementById("krasnal")
+      var ile=parseInt(getComputedStyle(ob2).left)
+      var ileg=parseInt(getComputedStyle(ob2).top)
+      var howcastle=parseInt(getComputedStyle(zamek).top)
+      console.log(howcastle)
+      console.log(ile)
+      //slonce,namiot
+      namiot.style.left=-1*yVal/5+"px"
+      ob.style.left=1.0*yVal-300+"px"
+       
+      var gr1=parseInt(getComputedStyle(gory1).top)
+      
+      gory1.style.top=yVal/2.5+315+"px"
+      gory2.style.top=yVal/2.5+315+"px"
+      
+      Bkrzak.style.top=1/4*yVal+409+"px"
+      Bkrzak2.style.left=1*yVal/5+"px"
+      Bkrzak1.style.left=-1*yVal/5+"px"
+
+      if(yVal>2000){
+        zamek.style.top=-1382+1450+"px"
+        
+      }else{
+        zamek.style.top=-yVal/1.4+1500+"px"
+        zamek.style.zIndex=(-2)
+      }
+      if(yVal>2000){
+
+      }else{
+      rycerz.style.left=yVal/1.4+-1300+"px"
+      }
+      ch1.style.left=yVal*0.7-460+"px"
+      ch2.style.left=yVal*0.5-1100+"px"
+      ch3.style.left=yVal*0.7-650+"px"
+      
+      }
+    
+    window.addEventListener("scroll",scrollowanie)
+    
+  </script>
+</body>
+</html>
